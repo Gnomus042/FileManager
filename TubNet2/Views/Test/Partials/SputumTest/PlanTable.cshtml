@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DataLibrary.SputumTest___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.sptp_date)</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.sptp_date)</td>
+                <td>
+                    @if (item.sptp_date.Date == DateTime.Now.Date)
+                    {
+                        @Html.ActionLink("Редагувати", "ChangeActiveTest", "Test", new { id = item.SputumTest.sputtest_id }, htmlAttributes: new { @class = "btn btn-style" });
+                    }
+
+                </td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.sptp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

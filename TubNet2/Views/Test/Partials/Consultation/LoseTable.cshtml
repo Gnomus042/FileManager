@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DataLibrary.Consult___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.cp_date)</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.cp_date)</td>
+                <td>
+                    @Html.ActionLink("Було зроблено", "ChangeActiveTest", "Test", new { id = item.Consultation.cons_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.cp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,38 @@
+﻿@model TubNet2.Models.ViewPatientsModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Styles.Render("~/Content/TestStyle.css")
+
+<div class="row">
+    <h2 class="col-md-3">Пацієнти</h2>
+    <div class="empty col-md-7"></div>
+    <div class="col-md-2">
+        <br />
+        @Html.ActionLink("Додати пацієнта", "AddPatient", "PatientController", htmlAttributes: new { @class = "btn btn-style btn-large" })
+    </div>
+    
+</div>
+
+<style>
+    .filter{
+        margin-top:0px;
+    }
+</style>
+
+<div>
+
+    <div class="col-md-3 filter">
+     
+        <div class="title">
+            <h3>Фільтр</h3>
+        </div>
+        @Html.Partial("FilterPatient", Model.filter)
+    </div>
+
+    <div class="col-md-9">
+        @Html.Partial("Table", Model.collection)
+    </div>
+</div>

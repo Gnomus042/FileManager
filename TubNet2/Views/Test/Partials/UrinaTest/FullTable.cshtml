@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DataLibrary.UrTest__Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.utp_date)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_protein)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_sugar)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_leumin)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_leumax)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_ermin)</th>
+            <th>@Html.DisplayNameFor(model => model.UrineTest.urtest_ermax)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.utp_date)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_protein)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_sugar)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_leumin)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_leumax)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_ermin)</td>
+                <td>@Html.DisplayFor(model => item.UrineTest.urtest_ermax)</td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.utp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

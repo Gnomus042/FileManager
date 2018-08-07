@@ -1,0 +1,9 @@
+﻿
+@model TubNet2.Models.ViewTestsModel
+
+<div class="col-md-12">
+    <h3>Завершені аналізи</h3>
+</div>
+<div class="col-md-12">
+    @Html.Partial(String.Format("Partials/{0}/FullTable", Model.ViewName), Model.ViewCollection)
+</divclass="col-md-12">

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<main>
+  <form_time>2018-03-25T00:00:00+02:00</form_time>
+  <patient>
+    <surname>Гольнев        </surname>
+    <name>Віталій        </name>
+    <secname>Миколайович    </secname>
+    <gender>чоловіча</gender>
+    <birthday>1945-09-23T00:00:00</birthday>
+    <phone>+380951234354, +380960987343</phone>
+    <factAddress>м. Вишневе, вул. Машинобудівників, д.18, кв.17</factAddress>
+    <regAddress>м. Севастополь, вул. Яблунева, д.22</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>позалегеневий  </type>
+    <bk>+</bk>
+    <destruction>+</destruction>
+    <other_diseases>Гепатит</other_diseases>
+    <cure_beginning>2015-12-16T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Іванчук        </surname>
+    <name>Григорій       </name>
+    <secname>Іванович       </secname>
+    <gender>чоловіча</gender>
+    <birthday>1987-10-16T00:00:00</birthday>
+    <phone>+380967435603</phone>
+    <factAddress>м.Вишневе, вул. Урицького, д. 144, кв. 13</factAddress>
+    <regAddress>м.Вишневе, вул. Урицького, д. 144, кв. 13</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>+</bk>
+    <destruction>+</destruction>
+    <other_diseases>СНІД</other_diseases>
+    <cure_beginning>2017-11-14T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Демьянова      </surname>
+    <name>Марина         </name>
+    <secname>Олегівна       </secname>
+    <gender>жіноча  </gender>
+    <birthday>1997-04-03T00:00:00</birthday>
+    <phone>+380504443566</phone>
+    <factAddress>м.Боярка, вул. Спортивна, д.17</factAddress>
+    <regAddress>м.Боярка, вул. Спортивна, д.17</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>-</bk>
+    <destruction>-</destruction>
+    <other_diseases />
+    <cure_beginning>2014-11-13T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Васильченко    </surname>
+    <name>Анастасія      </name>
+    <secname>Леонідівна     </secname>
+    <gender>жіноча  </gender>
+    <birthday>1934-07-09T00:00:00</birthday>
+    <phone>-</phone>
+    <factAddress>м.Вишневе, вул. Київська, д.22</factAddress>
+    <regAddress>м.Вишневе, вул. Київська, д.22</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>-</bk>
+    <destruction>+</destruction>
+    <other_diseases />
+    <cure_beginning>2016-04-29T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>ffffff         </surname>
+    <name>fffffff        </name>
+    <secname>               </secname>
+    <gender>чоловіча</gender>
+    <birthday />
+    <phone></phone>
+    <factAddress></factAddress>
+    <regAddress></regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>?</bk>
+    <destruction>?</destruction>
+    <other_diseases></other_diseases>
+    <cure_beginning>2018-03-25T00:00:00</cure_beginning>
+    <cure_end />
+    <result></result>
+  </patient>
+</main>

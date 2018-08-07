@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="col-md-12">
+    <h1>Кабінет лікаря-фтизіатра</h1>
+</div>
+
+<div class="col-md-12">
+    <div class="col-md-5 actual">
+        <h3>Заплановані на сьогодні події</h3>
+        @Html.Partial("ActualTests", ViewBag.actuals as IEnumerable<TubNet2.Models.PatientAnalsis>)
+    </div>
+    <div class="col-md-7">
+        <h1>Цікава інформація</h1>
+        <br />
+        <br />
+        <h4>Для Вас поки що немає цікавої інформації</h4>
+        <br />
+        <br />
+        
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model TubNet2.Models.ViewTestsModel
+
+@{
+    ViewBag.Title = "TestsList";
+}
+
+@Styles.Render("~/Content/TestStyle.css")
+
+<h2>Аналізи пацієнта: @Model.Patient.p_surname @Model.Patient.p_name @Model.Patient.p_secname</h2>
+
+<div class="nav col-md-12">
+    @Html.ActionLink("Аналізи крові", "TestsList", new { p_id = Model.Patient.p_id, viewName = "BloodTest", viewType = Model.filter.ViewType }, htmlAttributes: new { @class = (Model.ViewName == "BloodTest") ? "btn btn-primary" : "btn btn-style" })
+    @Html.ActionLink("Аналізи сечі", "TestsList", new { p_id = Model.Patient.p_id, viewName = "UrinaTest", viewType = Model.filter.ViewType }, htmlAttributes: new { @class = (Model.ViewName == "UrinaTest") ? "btn btn-primary" : "btn btn-style" })
+    @Html.ActionLink("Печінкові проби", "TestsList", new { p_id = Model.Patient.p_id, viewName = "HepaticTest", viewType = Model.filter.ViewType }, htmlAttributes: new { @class = (Model.ViewName == "HepaticTest") ? "btn btn-primary" : "btn btn-style" })
+    @Html.ActionLink("Аналізи мокроти", "TestsList", new { p_id = Model.Patient.p_id, viewName = "SputumTest", viewType = Model.filter.ViewType }, htmlAttributes: new { @class = (Model.ViewName == "SputumTest") ? "btn btn-primary" : "btn btn-style" })
+    @Html.ActionLink("Консультація", "TestsList", new { p_id = Model.Patient.p_id, viewName = "Consultation", viewType = Model.filter.ViewType }, htmlAttributes: new { @class = (Model.ViewName == "Consultation") ? "btn btn-primary" : "btn btn-style" })
+</div>
+
+
+<div class="col-md-3">
+    <br />
+    @Html.ActionLink("Повернутися до пацієнта", "SinglePatient", "Patient", new { p_id = Model.Patient.p_id }, htmlAttributes: new { @class = "btn btn-style" })
+    <br />
+    <div class="filter">
+        <div class="title">
+            <h4>Фільтр</h4>
+        </div>
+        <div class="inside">
+            @Html.Partial("Partials/Filter", Model.filter)
+        </div>
+    </div>
+    <br />
+
+</div>
+
+<div class="col-md-9 content">
+    @Html.Partial(Model.filter.ViewType, Model)
+</div>
+

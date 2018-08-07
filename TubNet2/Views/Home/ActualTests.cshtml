@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TubNet2.Models.PatientAnalsis>
+
+<table class="table">
+    <tr>
+        <th>Пацієнт</th>
+        <th>Подія</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.patient.p_surname @item.patient.p_name @item.patient.p_secname
+        </td>
+        <td>
+            @item.name
+        </td>
+        <td>
+            @Html.ActionLink("Переглянути", "SinglePatient", "Patient", new { p_id = item.patient.p_id}, htmlAttributes: new { @class ="btn btn-style"})
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TubDB", "TubDB\TubDB.csproj", "{2021B542-670B-4C40-89E9-52F39CD32EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{AE51A2B4-34EA-4708-9105-59F4842125D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TubNet2", "TubNet2\TubNet2.csproj", "{9BDDE786-0C95-4467-8D69-5EED839A15F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2021B542-670B-4C40-89E9-52F39CD32EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2021B542-670B-4C40-89E9-52F39CD32EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2021B542-670B-4C40-89E9-52F39CD32EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2021B542-670B-4C40-89E9-52F39CD32EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE51A2B4-34EA-4708-9105-59F4842125D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE51A2B4-34EA-4708-9105-59F4842125D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE51A2B4-34EA-4708-9105-59F4842125D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE51A2B4-34EA-4708-9105-59F4842125D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDDE786-0C95-4467-8D69-5EED839A15F1}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDDE786-0C95-4467-8D69-5EED839A15F1}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{9BDDE786-0C95-4467-8D69-5EED839A15F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDDE786-0C95-4467-8D69-5EED839A15F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC926B92-3A97-4B14-8E00-393A08A57531}
+	EndGlobalSection
+EndGlobal

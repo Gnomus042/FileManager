@@ -1,0 +1,53 @@
+﻿@model TubNet2.Models.ViewTestsModel
+
+<style>
+
+</style>
+
+<div  class="col-md-6">
+    <div class="plan-button">
+        <h4>Запланувати новий аналіз на </h4>
+        @if (Model.ViewName != "Consultation")
+    {
+
+        using (Html.BeginForm("PlanTest", "Test", FormMethod.Post, htmlAttributes: new { @class = "form" }))
+        {
+            <input type="date" name="date" value="@DateTime.Today.ToString("yyyy-MM-dd")" min="@DateTime.Today.ToString("yyyy-MM-dd")" class=" col-md-6 form-control" />
+            <input type="submit" value="ОК" class="btn btn-style" />
+    }
+
+}
+else
+{
+    using (Html.BeginForm("PlanConsultation", "Test", FormMethod.Post, htmlAttributes: new { @class = "form" }))
+    {
+        <input type="date" name="date" value="@DateTime.Today.ToString("yyyy-MM-dd")" min="@DateTime.Today.ToString("yyyy-MM-dd")" class=" col-md-6 form-control" />
+        <br />
+        <br />
+        @Html.DropDownList("ct_id", ViewBag.SelectType as SelectList, htmlAttributes:new { @class="col-md-12"})
+        <br />
+        <br />
+        <input type="submit" value="ОК" class="btn btn-style" />
+}
+}
+    </div>
+    <div>
+        <h3>Заплановані аналізи</h3>
+        @Html.Partial(String.Format("Partials/{0}/PlanTable", Model.ViewName), Model.ViewCollection)
+    </div>
+</div>
+<div class="col-md-6 test-field">
+    @if (Model.Single != null)
+    {
+        <div class="title">
+            <h4>Аналіз за @Model.SingleDate</h4>
+        </div>
+        @Html.Partial(String.Format("Partials/{0}/{0}", Model.ViewName), Model.Single)
+    }
+    else
+    {
+        <div class="empty-test">
+            <h2>Аналіз не обрано</h2>
+        </div>
+    }
+</div>

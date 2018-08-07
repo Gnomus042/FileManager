@@ -1,0 +1,178 @@
+﻿@model DataLibrary.Patients
+
+@{
+    ViewBag.Title = "SinglePatient";
+}
+
+<style>
+    div{
+        font-size:large;
+    }
+    .title-name {
+        position: relative;
+        width: 50%;
+        display: inline-block;
+        height:75px;
+    }
+
+    .title-nav {
+        position:absolute;
+        width: 49%; 
+        padding-top:15px;
+        display:inline-block;
+        text-align:right;
+        height:75px;
+    }
+    .analysis-btn{
+        font-size:medium;
+        margin-left:10px;
+        font-weight:bold;
+    }
+    .info{
+       display:inline-block;
+    }
+
+
+    .info img{
+        float:right; 
+        margin: 0px 20px 10px 0px;
+        
+    }
+
+    .personal-info{
+        display:inline-block;
+        margin-top:0px;
+        
+    }
+
+    .diagnosis-info{
+        display:inline-block;
+        padding-top:0px;
+      
+    }
+
+    .personal-info-token{
+        
+    }
+
+   .personal-info-token span{
+       font-weight:bold;
+   }
+
+   .diagnosis-info-token span{
+       font-weight: bold;
+   }
+
+   .analysis-btn{
+       width:100%;
+       float:right;
+   }
+
+   h4{
+       font-weight:bold;
+       font-family:Arial;
+   }
+</style>
+
+
+<div class="title col-md-12">
+    <div class="title-name">
+        <h2> @Html.DisplayFor(model => model.p_surname) @Html.DisplayFor(model => model.p_name) @Html.DisplayFor(model => model.p_secname)</h2>
+    </div>
+    <div class="title-nav">
+        @Html.ActionLink("Редагувати", "SinglePatientEdit", new { p_id = Model.p_id }, htmlAttributes: new { @class = "btn btn-style" } )
+        @Html.ActionLink("Видалити", "SinglePatientDelete", new { p_id = Model.p_id },htmlAttributes: new { @class = "btn btn-style" })
+        @Html.ActionLink("Повернутися до списку", "PatientsTable", "Patient", htmlAttributes: new { @class = "btn btn-style" } )
+    </div>  
+</div>
+
+
+<div class="col-md-12">
+
+
+    <div class="info">
+        <div class="col-md-4">
+            @if (Model.Gender.gen_value == "чоловіча")
+    {
+        <img src="@Url.Content("~/Content/Images/Profile/male1.jpg")" alt="Alternate Text" class="col-md-10" />
+}
+else
+{
+        <img src="@Url.Content("~/Content/Images/Profile/female2.jpg")" alt="Alternate Text" class="col-md-10" />
+}
+            <div class="col-md-12">
+                @Html.ActionLink("До аналізів", "TestsList", "Test",new { p_id = Model.p_id}, htmlAttributes: new { @class = "btn btn-style analysis-btn" })
+            </div>
+        </div>
+
+        <div class="personal-info col-md-4">
+            <h4>Персональна інформація:</h4>
+            <div class="personal-info-token">
+                <p> <span>@Html.DisplayNameFor(model => model.p_surname)</span>: @Html.DisplayFor(model => model.p_surname)</p>
+            </div>
+            <div class="personal-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_name)</span>: @Html.DisplayFor(model => model.p_name)</p>
+            </div>
+            <div class="personal-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_secname)</span>: @Html.DisplayFor(model => model.p_secname)</p>
+            </div>
+            <div class="personal-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_birthday)</span>: @Html.DisplayFor(model => model.p_birthday)</p>
+            </div>
+
+            <div class="contact-info">
+                <h4>Контактна інформація:</h4>
+                <div class="personal-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_factAddress)</span>: @Html.DisplayFor(model => model.p_factAddress)</p>
+                </div>
+                <div class="personal-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_regAddress)</span>: @Html.DisplayFor(model => model.p_regAddress)</p>
+                </div>
+                <div class="personal-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_phones)</span>: @Html.DisplayFor(model => model.p_phones)</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="diagnosis-info col-md-4">
+            <h4>Лікування:</h4>
+            
+                <div class="diagnosis-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_diagnosisId)</span>: @Html.DisplayFor(model => model.Diagnosis.diag_value)</p>
+                </div>
+                <div class="diagnosis-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_destructionId)</span>: @Html.DisplayFor(model => model.Destruction.destr_value)</p>
+                </div>
+            
+                <div class="diagnosis-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_typeId)</span>: @Html.DisplayFor(model => model.Type.type_value)</p>
+                </div>
+                <div class="diagnosis-info-token">
+                    <p><span>@Html.DisplayNameFor(model => model.p_bkID)</span>: @Html.DisplayFor(model => model.BK.bk_value)</p>
+                </div>
+                
+            
+            <div class="diagnosis-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_otherDiseases)</span>: @Html.DisplayFor(model => model.p_otherDiseases)</p>
+            </div>
+            <div class="diagnosis-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_firstVisit)</span>: @Html.DisplayFor(model => model.p_firstVisit)</p>
+            </div>
+            <div class="diagnosis-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_lastVisit)</span>: @Html.DisplayFor(model => model.p_lastVisit)</p>
+            </div>
+            <div class="diagnosis-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_result)</span>: @Html.DisplayFor(model => model.p_result)</p>
+            </div>
+            <div class="diagnosis-info-token">
+                <p><span>@Html.DisplayNameFor(model => model.p_komment)</span>: @Html.DisplayFor(model => model.p_komment)</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<p>
+    
+</p>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DataLibrary.HepTest___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.htp_date)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_bilir)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_kreat)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_timil)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_uricasid)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_alt)</th>
+            <th>@Html.DisplayNameFor(model => model.HepaticTest.heptest_ast)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.htp_date)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_bilir)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_kreat)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_timil)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_uricasid)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_alt)</td>
+                <td>@Html.DisplayFor(model => item.HepaticTest.heptest_ast)</td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.htp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

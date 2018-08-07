@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DataLibrary.SputumTest___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.sptp_date)</th>
+            <th>@Html.DisplayNameFor(model => model.SputumTest.sputtest_inocul)</th>
+            <th>@Html.DisplayNameFor(model => model.SputumTest.sputtest_scopy)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.sptp_date)</td>
+                <td>@Html.DisplayFor(model => item.SputumTest.sputtest_inocul)</td>
+                <td>@Html.DisplayFor(model => item.SputumTest.sputtest_scopy)</td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.sptp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

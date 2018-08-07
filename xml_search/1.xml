@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<main>
+  <form_time>2018-03-25T00:00:00+02:00</form_time>
+  <patient>
+    <surname>Миколайчук     </surname>
+    <name>Іван           </name>
+    <secname>Олегович       </secname>
+    <gender>чоловіча</gender>
+    <birthday>1967-01-31T00:00:00</birthday>
+    <phone>-</phone>
+    <factAddress>м.Вишневе, вул. Жовтнева, д.4, кв.131</factAddress>
+    <regAddress>м.Вишневе, вул. Жовтнева, д.4, кв.131</regAddress>
+    <diagnosis>ВДТБ           </diagnosis>
+    <type>позалегеневий  </type>
+    <bk>-</bk>
+    <destruction>+</destruction>
+    <other_diseases />
+    <cure_beginning>2014-05-24T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Гольнев        </surname>
+    <name>Віталій        </name>
+    <secname>Миколайович    </secname>
+    <gender>чоловіча</gender>
+    <birthday>1945-09-23T00:00:00</birthday>
+    <phone>+380951234354, +380960987343</phone>
+    <factAddress>м. Вишневе, вул. Машинобудівників, д.18, кв.17</factAddress>
+    <regAddress>м. Севастополь, вул. Яблунева, д.22</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>позалегеневий  </type>
+    <bk>+</bk>
+    <destruction>+</destruction>
+    <other_diseases>Гепатит</other_diseases>
+    <cure_beginning>2015-12-16T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Іванчук        </surname>
+    <name>Григорій       </name>
+    <secname>Іванович       </secname>
+    <gender>чоловіча</gender>
+    <birthday>1987-10-16T00:00:00</birthday>
+    <phone>+380967435603</phone>
+    <factAddress>м.Вишневе, вул. Урицького, д. 144, кв. 13</factAddress>
+    <regAddress>м.Вишневе, вул. Урицького, д. 144, кв. 13</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>+</bk>
+    <destruction>+</destruction>
+    <other_diseases>СНІД</other_diseases>
+    <cure_beginning>2017-11-14T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Бобров         </surname>
+    <name>Нікіта         </name>
+    <secname>Олександрович  </secname>
+    <gender>чоловіча</gender>
+    <birthday>1956-11-08T00:00:00</birthday>
+    <phone>+380503499987</phone>
+    <factAddress>м.Вишневе, вул. Зелена, д.25, кв.13</factAddress>
+    <regAddress>м.Москва</regAddress>
+    <diagnosis>РМРТБ          </diagnosis>
+    <type>легеневий      </type>
+    <bk>-</bk>
+    <destruction>-</destruction>
+    <other_diseases />
+    <cure_beginning>2016-07-17T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Мох            </surname>
+    <name>Василь         </name>
+    <secname>Семенович      </secname>
+    <gender>чоловіча</gender>
+    <birthday>1940-11-27T00:00:00</birthday>
+    <phone>+380973276409</phone>
+    <factAddress>м.Вишневе, вул.Сонячна, д.14</factAddress>
+    <regAddress>м.Вишневе, вул.Сонячна, д.14</regAddress>
+    <diagnosis>РТБ            </diagnosis>
+    <type>легеневий      </type>
+    <bk>-</bk>
+    <destruction>?</destruction>
+    <other_diseases />
+    <cure_beginning>2017-07-23T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Гаврілко       </surname>
+    <name>Станіслав      </name>
+    <secname>Семенович      </secname>
+    <gender>чоловіча</gender>
+    <birthday>1977-04-16T00:00:00</birthday>
+    <phone>+380956663472</phone>
+    <factAddress>м.Вишневе, вул. Жовтнева, д.18</factAddress>
+    <regAddress>м.Вишневе, вул. Жовтнева, д.18</regAddress>
+    <diagnosis>не встановлено </diagnosis>
+    <type>не встановлено </type>
+    <bk>?</bk>
+    <destruction>?</destruction>
+    <other_diseases />
+    <cure_beginning>2018-02-17T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>Артемів        </surname>
+    <name>Микита         </name>
+    <secname>Степанович     </secname>
+    <gender>чоловіча</gender>
+    <birthday />
+    <phone />
+    <factAddress />
+    <regAddress />
+    <diagnosis>РМРТБ          </diagnosis>
+    <type>позалегеневий  </type>
+    <bk>?</bk>
+    <destruction>+</destruction>
+    <other_diseases />
+    <cure_beginning />
+    <cure_end />
+    <result />
+  </patient>
+  <patient>
+    <surname>ffffff         </surname>
+    <name>fffffff        </name>
+    <secname>               </secname>
+    <gender>чоловіча</gender>
+    <birthday />
+    <phone></phone>
+    <factAddress></factAddress>
+    <regAddress></regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>легеневий      </type>
+    <bk>?</bk>
+    <destruction>?</destruction>
+    <other_diseases></other_diseases>
+    <cure_beginning>2018-03-25T00:00:00</cure_beginning>
+    <cure_end />
+    <result></result>
+  </patient>
+</main>

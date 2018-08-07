@@ -1,0 +1,108 @@
+﻿@model TubNet2.Models.PatientsFilterModel
+
+<style>
+
+    .form{
+        padding:0px;
+    }
+    .form-group {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 0px;
+        border:5px solid white;
+    }
+
+    .form-control{
+        
+    }
+
+    .dropdown{
+        display:inline-block;
+        width:100%;
+    }
+    .submit-but{
+        display:inline-block;
+        position:center;
+    }
+</style>
+
+@using (Html.BeginForm("SetFilter", "Patient", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.p_surname, htmlAttributes: new { @class = "control-label" })
+            
+                @Html.EditorFor(model => model.p_surname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_surname, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.p_name, htmlAttributes: new { @class = "control-label" })
+            
+                @Html.EditorFor(model => model.p_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-12">
+            @Html.CheckBoxFor(model => model.UseGender)
+            @Html.LabelFor(model => model.p_genderId, htmlAttributes: new { @class = "control-label" })
+            
+                @Html.DropDownListFor(model => model.p_genderId,ViewBag.Gender as SelectList ,new { htmlAttributes = new { @class = "form-control dropdown" } })
+                @Html.ValidationMessageFor(model => model.p_genderId, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-12">
+            @Html.CheckBoxFor(model=> model.UseBirthday)
+            @Html.LabelFor(model => model.p_birthday, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.p_birthday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_birthday, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                @Html.CheckBoxFor(model => model.UseDiagnosis)
+                @Html.LabelFor(model => model.p_diagnosisId, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(model => model.p_diagnosisId, ViewBag.Diagnosis as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_diagnosisId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.CheckBoxFor(model => model.UseType)
+                @Html.LabelFor(model => model.p_typeId, htmlAttributes: new { @class = "control-label" })
+
+                @Html.DropDownListFor(model => model.p_typeId, ViewBag.Type as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_typeId, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                @Html.CheckBoxFor(model => model.UseBK)
+                @Html.LabelFor(model => model.p_bkID, htmlAttributes: new { @class = "control-label" })
+
+                @Html.DropDownListFor(model => model.p_bkID, ViewBag.BK as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_bkID, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.CheckBoxFor(model => model.UseDestruction)
+                @Html.LabelFor(model => model.p_destructionId, htmlAttributes: new { @class = "control-label" })
+
+                @Html.DropDownListFor(model => model.p_destructionId, ViewBag.Destruction as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.p_destructionId, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+
+                <input type="submit" value="Шукати" class="btn btn-default submit-but" />
+
+        </div>
+    </div>
+}
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea3fef9c3eea486089c7006654652545" Name="Diagram1">
+        <EntityTypeShape EntityType="TubDataBaseModel.BK" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.BloodTest" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.BlTest___Patient" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Consult___Patient" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Consultation" Width="1.5" PointX="11" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.ConsultationType" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Destruction" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Diagnosis" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Gender" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.HepaticTest" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.HepTest___Patient" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Logs" Width="1.5" PointX="10.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Patients" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.SputumTest" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.SputumTest___Patient" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.State" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.Type" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.UrineTest" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TubDataBaseModel.UrTest__Patient" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Patients_BK" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_BloodTest_BloodTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_BlTest___Patient_BloodTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_BlTest___Patient_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_BlTest___Patient_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Comsult___Patient_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Consult___Patient_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Consultation_ConsultationType" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Patients_Destruction" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Patients_Diagnosis" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Patients_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_HepTest___Patient_HepaticTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_HepTest___Patient_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_HepTest___Patient_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Patients_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_SputumTest___Patient_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_UrTest__Patient_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_SputumTest___Patient_SputumTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_SputumTest___Patient_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_UrTest__Patient_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_UrTest__Patient_UrineTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TubDataBaseModel.FK_Consult___Patient_Consultation" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<main>
+  <form_time>2018-03-26T00:00:00+03:00</form_time>
+  <patient>
+    <surname>Гольнев        </surname>
+    <name>Віталій        </name>
+    <secname>Миколайович    </secname>
+    <gender>чоловіча</gender>
+    <birthday>1945-09-23T00:00:00</birthday>
+    <phone>+380951234354, +380960987343</phone>
+    <factAddress>м. Вишневе, вул. Машинобудівників, д.18, кв.17</factAddress>
+    <regAddress>м. Севастополь, вул. Яблунева, д.22</regAddress>
+    <diagnosis>МРТБ           </diagnosis>
+    <type>позалегеневий  </type>
+    <bk>+</bk>
+    <destruction>+</destruction>
+    <other_diseases>Гепатит</other_diseases>
+    <cure_beginning>2015-12-16T00:00:00</cure_beginning>
+    <cure_end />
+    <result />
+  </patient>
+</main>

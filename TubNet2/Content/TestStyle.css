@@ -1,0 +1,94 @@
+﻿body {
+}
+
+.btn-act {
+    background-color: #2E2E2E;
+    border: 2px #2E2E2E solid;
+    color: white;
+    text-decoration: none;
+}
+
+    .btn-act:hover {
+        background-color: black;
+        border: 2px #2E2E2E solid;
+        color: white;
+        text-decoration: none;
+    }
+
+   .nav .btn{
+        margin-right:20px;
+    }
+
+    .content {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .filter {
+        border: 4px solid #2E2E2E;
+        margin-top: 30px;
+        padding: 0px;
+        
+    }
+
+        .filter div {
+            margin: 0 auto;
+            
+            width: 100%;
+            padding-left: 5px;
+            font-weight: bold;
+        }
+
+        .filter .title {
+            color: azure;
+            background-color: #2E2E2E;
+            border: 5px solid #2E2E2E;
+            height: 20%;
+            margin-top: 0px;
+        }
+
+        .filter .inside{
+            padding:5px;
+        }
+        
+        .filter .submit-but{
+            text-align:center;
+        }
+
+    .title {
+        margin-top:0px;
+        color: azure;
+        background-color: #2E2E2E;
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .title {
+        display: inline-block;
+    }
+
+    .btn {
+        margin-left: 10px;
+    }
+
+    .plan-button {
+        margin-bottom: 10px;
+    }
+
+    .test-field {
+        border: 5px solid #2E2E2E;
+        padding: 0px;
+        min-height: 400px;
+    }
+
+
+    .title {
+        color: azure;
+        background-color: #2E2E2E;
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .empty-test {
+        margin-left: 20%;
+        margin-top: 40%;
+    }

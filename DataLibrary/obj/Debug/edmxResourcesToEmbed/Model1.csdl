@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TubDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BK">
+    <Key>
+      <PropertyRef Name="bk_id" />
+    </Key>
+    <Property Name="bk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bk_value" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_BK" FromRole="BK" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="BloodTest">
+    <Key>
+      <PropertyRef Name="bltest_id" />
+    </Key>
+    <Property Name="bltest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bltest_leu" Type="Double" />
+    <Property Name="bltest_hem" Type="Int32" />
+    <Property Name="bltest_er" Type="Double" />
+    <Property Name="bltest_gran" Type="Int32" />
+    <Property Name="bltest_limf" Type="Int32" />
+    <Property Name="bltest_mono" Type="Int32" />
+    <Property Name="bltest_soy" Type="Int32" />
+    <NavigationProperty Name="BloodTest1" Relationship="Self.FK_BloodTest_BloodTest" FromRole="BloodTest" ToRole="BloodTest1" />
+    <NavigationProperty Name="BloodTest2" Relationship="Self.FK_BloodTest_BloodTest" FromRole="BloodTest1" ToRole="BloodTest" />
+    <NavigationProperty Name="BlTest___Patient" Relationship="Self.FK_BlTest___Patient_BloodTest" FromRole="BloodTest" ToRole="BlTest___Patient" />
+  </EntityType>
+  <EntityType Name="BlTest___Patient">
+    <Key>
+      <PropertyRef Name="bltp_id" />
+    </Key>
+    <Property Name="bltp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bltp_patid" Type="Int32" Nullable="false" />
+    <Property Name="bltp_testid" Type="Int32" Nullable="false" />
+    <Property Name="bltp_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="bltp_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BloodTest" Relationship="Self.FK_BlTest___Patient_BloodTest" FromRole="BlTest___Patient" ToRole="BloodTest" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_BlTest___Patient_Patients" FromRole="BlTest___Patient" ToRole="Patients" />
+    <NavigationProperty Name="State" Relationship="Self.FK_BlTest___Patient_State" FromRole="BlTest___Patient" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Consult___Patient">
+    <Key>
+      <PropertyRef Name="cp_id" />
+    </Key>
+    <Property Name="cp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cp_patid" Type="Int32" Nullable="false" />
+    <Property Name="cp_consid" Type="Int32" Nullable="false" />
+    <Property Name="cp_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cp_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="State" Relationship="Self.FK_Comsult___Patient_State" FromRole="Consult___Patient" ToRole="State" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Consult___Patient_Patients" FromRole="Consult___Patient" ToRole="Patients" />
+    <NavigationProperty Name="Consultation" Relationship="TubDataBaseModel.FK_Consult___Patient_Consultation" FromRole="Consult___Patient" ToRole="Consultation" />
+  </EntityType>
+  <EntityType Name="Consultation">
+    <Key>
+      <PropertyRef Name="cons_id" />
+    </Key>
+    <Property Name="cons_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cons_type" Type="Int32" Nullable="false" />
+    <Property Name="cons_komment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ConsultationType" Relationship="Self.FK_Consultation_ConsultationType" FromRole="Consultation" ToRole="ConsultationType" />
+    <NavigationProperty Name="Consult___Patient" Relationship="TubDataBaseModel.FK_Consult___Patient_Consultation" FromRole="Consultation" ToRole="Consult___Patient" />
+  </EntityType>
+  <EntityType Name="ConsultationType">
+    <Key>
+      <PropertyRef Name="ct_id" />
+    </Key>
+    <Property Name="ct_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ct_value" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Consultation" Relationship="Self.FK_Consultation_ConsultationType" FromRole="ConsultationType" ToRole="Consultation" />
+  </EntityType>
+  <EntityType Name="Destruction">
+    <Key>
+      <PropertyRef Name="destr_id" />
+    </Key>
+    <Property Name="destr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="destr_value" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Destruction" FromRole="Destruction" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Diagnosis">
+    <Key>
+      <PropertyRef Name="diag_id" />
+    </Key>
+    <Property Name="diag_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diag_value" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Diagnosis" FromRole="Diagnosis" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="gen_id" />
+    </Key>
+    <Property Name="gen_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gen_value" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Gender" FromRole="Gender" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="HepaticTest">
+    <Key>
+      <PropertyRef Name="heptest_id" />
+    </Key>
+    <Property Name="heptest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="heptest_bilir" Type="Double" />
+    <Property Name="heptest_timil" Type="Int32" />
+    <Property Name="heptest_alt" Type="Double" />
+    <Property Name="heptest_ast" Type="Double" />
+    <Property Name="heptest_uricasid" Type="Int32" />
+    <Property Name="heptest_kreat" Type="Double" />
+    <NavigationProperty Name="HepTest___Patient" Relationship="Self.FK_HepTest___Patient_HepaticTest" FromRole="HepaticTest" ToRole="HepTest___Patient" />
+  </EntityType>
+  <EntityType Name="HepTest___Patient">
+    <Key>
+      <PropertyRef Name="htp_id" />
+    </Key>
+    <Property Name="htp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="htp_patid" Type="Int32" Nullable="false" />
+    <Property Name="htp_testid" Type="Int32" Nullable="false" />
+    <Property Name="htp_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="htp_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HepaticTest" Relationship="Self.FK_HepTest___Patient_HepaticTest" FromRole="HepTest___Patient" ToRole="HepaticTest" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_HepTest___Patient_Patients" FromRole="HepTest___Patient" ToRole="Patients" />
+    <NavigationProperty Name="State" Relationship="Self.FK_HepTest___Patient_State" FromRole="HepTest___Patient" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="log_date" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="p_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="p_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="p_secname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_birthday" Type="DateTime" Precision="0" />
+    <Property Name="p_genderId" Type="Int32" Nullable="false" />
+    <Property Name="p_factAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="p_regAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="p_diagnosisId" Type="Int32" />
+    <Property Name="p_typeId" Type="Int32" />
+    <Property Name="p_bkID" Type="Int32" />
+    <Property Name="p_destructionId" Type="Int32" />
+    <Property Name="p_otherDiseases" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="p_firstVisit" Type="DateTime" Precision="0" />
+    <Property Name="p_lastVisit" Type="DateTime" Precision="0" />
+    <Property Name="p_result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_phones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="p_komment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BK" Relationship="Self.FK_Patients_BK" FromRole="Patients" ToRole="BK" />
+    <NavigationProperty Name="BlTest___Patient" Relationship="Self.FK_BlTest___Patient_Patients" FromRole="Patients" ToRole="BlTest___Patient" />
+    <NavigationProperty Name="Consult___Patient" Relationship="Self.FK_Consult___Patient_Patients" FromRole="Patients" ToRole="Consult___Patient" />
+    <NavigationProperty Name="Destruction" Relationship="Self.FK_Patients_Destruction" FromRole="Patients" ToRole="Destruction" />
+    <NavigationProperty Name="Diagnosis" Relationship="Self.FK_Patients_Diagnosis" FromRole="Patients" ToRole="Diagnosis" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_Patients_Gender" FromRole="Patients" ToRole="Gender" />
+    <NavigationProperty Name="HepTest___Patient" Relationship="Self.FK_HepTest___Patient_Patients" FromRole="Patients" ToRole="HepTest___Patient" />
+    <NavigationProperty Name="Type" Relationship="Self.FK_Patients_Type" FromRole="Patients" ToRole="Type" />
+    <NavigationProperty Name="SputumTest___Patient" Relationship="Self.FK_SputumTest___Patient_Patients" FromRole="Patients" ToRole="SputumTest___Patient" />
+    <NavigationProperty Name="UrTest__Patient" Relationship="Self.FK_UrTest__Patient_Patients" FromRole="Patients" ToRole="UrTest__Patient" />
+  </EntityType>
+  <EntityType Name="SputumTest">
+    <Key>
+      <PropertyRef Name="sputtest_id" />
+    </Key>
+    <Property Name="sputtest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sputtest_scopy" Type="Double" />
+    <Property Name="sputtest_inocul" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="SputumTest___Patient" Relationship="Self.FK_SputumTest___Patient_SputumTest" FromRole="SputumTest" ToRole="SputumTest___Patient" />
+  </EntityType>
+  <EntityType Name="SputumTest___Patient">
+    <Key>
+      <PropertyRef Name="sptp_id" />
+    </Key>
+    <Property Name="sptp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sptp_patid" Type="Int32" Nullable="false" />
+    <Property Name="sptp_testid" Type="Int32" Nullable="false" />
+    <Property Name="sptp_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="sptp_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_SputumTest___Patient_Patients" FromRole="SputumTest___Patient" ToRole="Patients" />
+    <NavigationProperty Name="SputumTest" Relationship="Self.FK_SputumTest___Patient_SputumTest" FromRole="SputumTest___Patient" ToRole="SputumTest" />
+    <NavigationProperty Name="State" Relationship="Self.FK_SputumTest___Patient_State" FromRole="SputumTest___Patient" ToRole="State" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="state_value" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BlTest___Patient" Relationship="Self.FK_BlTest___Patient_State" FromRole="State" ToRole="BlTest___Patient" />
+    <NavigationProperty Name="Consult___Patient" Relationship="Self.FK_Comsult___Patient_State" FromRole="State" ToRole="Consult___Patient" />
+    <NavigationProperty Name="HepTest___Patient" Relationship="Self.FK_HepTest___Patient_State" FromRole="State" ToRole="HepTest___Patient" />
+    <NavigationProperty Name="SputumTest___Patient" Relationship="Self.FK_SputumTest___Patient_State" FromRole="State" ToRole="SputumTest___Patient" />
+    <NavigationProperty Name="UrTest__Patient" Relationship="Self.FK_UrTest__Patient_State" FromRole="State" ToRole="UrTest__Patient" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="type_id" />
+    </Key>
+    <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_value" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Type" FromRole="Type" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="UrineTest">
+    <Key>
+      <PropertyRef Name="urtest_id" />
+    </Key>
+    <Property Name="urtest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urtest_protein" Type="Double" />
+    <Property Name="urtest_sugar" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="urtest_leumin" Type="Int32" />
+    <Property Name="urtest_leumax" Type="Int32" />
+    <Property Name="urtest_ermin" Type="Int32" />
+    <Property Name="urtest_ermax" Type="Int32" />
+    <NavigationProperty Name="UrTest__Patient" Relationship="Self.FK_UrTest__Patient_UrineTest" FromRole="UrineTest" ToRole="UrTest__Patient" />
+  </EntityType>
+  <EntityType Name="UrTest__Patient">
+    <Key>
+      <PropertyRef Name="utp_id" />
+    </Key>
+    <Property Name="utp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="utp_patid" Type="Int32" Nullable="false" />
+    <Property Name="utp_testid" Type="Int32" />
+    <Property Name="utp_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="utp_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_UrTest__Patient_Patients" FromRole="UrTest__Patient" ToRole="Patients" />
+    <NavigationProperty Name="State" Relationship="Self.FK_UrTest__Patient_State" FromRole="UrTest__Patient" ToRole="State" />
+    <NavigationProperty Name="UrineTest" Relationship="Self.FK_UrTest__Patient_UrineTest" FromRole="UrTest__Patient" ToRole="UrineTest" />
+  </EntityType>
+  <Association Name="FK_Patients_BK">
+    <End Role="BK" Type="Self.BK" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BK">
+        <PropertyRef Name="bk_id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="p_bkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BloodTest_BloodTest">
+    <End Role="BloodTest" Type="Self.BloodTest" Multiplicity="1" />
+    <End Role="BloodTest1" Type="Self.BloodTest" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BloodTest">
+        <PropertyRef Name="bltest_id" />
+      </Principal>
+      <Dependent Role="BloodTest1">
+        <PropertyRef Name="bltest_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlTest___Patient_BloodTest">
+    <End Role="BloodTest" Type="Self.BloodTest" Multiplicity="1" />
+    <End Role="BlTest___Patient" Type="Self.BlTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodTest">
+        <PropertyRef Name="bltest_id" />
+      </Principal>
+      <Dependent Role="BlTest___Patient">
+        <PropertyRef Name="bltp_testid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlTest___Patient_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BlTest___Patient" Type="Self.BlTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="BlTest___Patient">
+        <PropertyRef Name="bltp_patid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlTest___Patient_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="BlTest___Patient" Type="Self.BlTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="BlTest___Patient">
+        <PropertyRef Name="bltp_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comsult___Patient_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="Consult___Patient" Type="Self.Consult___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="Consult___Patient">
+        <PropertyRef Name="cp_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consult___Patient_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Consult___Patient" Type="Self.Consult___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="Consult___Patient">
+        <PropertyRef Name="cp_patid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_ConsultationType">
+    <End Role="ConsultationType" Type="Self.ConsultationType" Multiplicity="1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultationType">
+        <PropertyRef Name="ct_id" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="cons_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Destruction">
+    <End Role="Destruction" Type="Self.Destruction" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Destruction">
+        <PropertyRef Name="destr_id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="p_destructionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Diagnosis">
+    <End Role="Diagnosis" Type="Self.Diagnosis" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diagnosis">
+        <PropertyRef Name="diag_id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="p_diagnosisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="gen_id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="p_genderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HepTest___Patient_HepaticTest">
+    <End Role="HepaticTest" Type="Self.HepaticTest" Multiplicity="1" />
+    <End Role="HepTest___Patient" Type="Self.HepTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HepaticTest">
+        <PropertyRef Name="heptest_id" />
+      </Principal>
+      <Dependent Role="HepTest___Patient">
+        <PropertyRef Name="htp_testid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HepTest___Patient_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HepTest___Patient" Type="Self.HepTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="HepTest___Patient">
+        <PropertyRef Name="htp_patid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HepTest___Patient_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="HepTest___Patient" Type="Self.HepTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="HepTest___Patient">
+        <PropertyRef Name="htp_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Type">
+    <End Role="Type" Type="Self.Type" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="type_id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="p_typeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SputumTest___Patient_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SputumTest___Patient" Type="Self.SputumTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="SputumTest___Patient">
+        <PropertyRef Name="sptp_patid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UrTest__Patient_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UrTest__Patient" Type="Self.UrTest__Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="UrTest__Patient">
+        <PropertyRef Name="utp_patid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SputumTest___Patient_SputumTest">
+    <End Role="SputumTest" Type="Self.SputumTest" Multiplicity="1" />
+    <End Role="SputumTest___Patient" Type="Self.SputumTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SputumTest">
+        <PropertyRef Name="sputtest_id" />
+      </Principal>
+      <Dependent Role="SputumTest___Patient">
+        <PropertyRef Name="sptp_testid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SputumTest___Patient_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="SputumTest___Patient" Type="Self.SputumTest___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="SputumTest___Patient">
+        <PropertyRef Name="sptp_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UrTest__Patient_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="UrTest__Patient" Type="Self.UrTest__Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="UrTest__Patient">
+        <PropertyRef Name="utp_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UrTest__Patient_UrineTest">
+    <End Role="UrineTest" Type="Self.UrineTest" Multiplicity="0..1" />
+    <End Role="UrTest__Patient" Type="Self.UrTest__Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UrineTest">
+        <PropertyRef Name="urtest_id" />
+      </Principal>
+      <Dependent Role="UrTest__Patient">
+        <PropertyRef Name="utp_testid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TubDataBaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BK" EntityType="Self.BK" />
+    <EntitySet Name="BloodTest" EntityType="Self.BloodTest" />
+    <EntitySet Name="BlTest___Patient" EntityType="Self.BlTest___Patient" />
+    <EntitySet Name="Consult___Patient" EntityType="Self.Consult___Patient" />
+    <EntitySet Name="Consultation" EntityType="Self.Consultation" />
+    <EntitySet Name="ConsultationType" EntityType="Self.ConsultationType" />
+    <EntitySet Name="Destruction" EntityType="Self.Destruction" />
+    <EntitySet Name="Diagnosis" EntityType="Self.Diagnosis" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="HepaticTest" EntityType="Self.HepaticTest" />
+    <EntitySet Name="HepTest___Patient" EntityType="Self.HepTest___Patient" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" />
+    <EntitySet Name="SputumTest" EntityType="Self.SputumTest" />
+    <EntitySet Name="SputumTest___Patient" EntityType="Self.SputumTest___Patient" />
+    <EntitySet Name="State" EntityType="Self.State" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Type" EntityType="Self.Type" />
+    <EntitySet Name="UrineTest" EntityType="Self.UrineTest" />
+    <EntitySet Name="UrTest__Patient" EntityType="Self.UrTest__Patient" />
+    <AssociationSet Name="FK_Patients_BK" Association="Self.FK_Patients_BK">
+      <End Role="BK" EntitySet="BK" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BloodTest_BloodTest" Association="Self.FK_BloodTest_BloodTest">
+      <End Role="BloodTest" EntitySet="BloodTest" />
+      <End Role="BloodTest1" EntitySet="BloodTest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlTest___Patient_BloodTest" Association="Self.FK_BlTest___Patient_BloodTest">
+      <End Role="BloodTest" EntitySet="BloodTest" />
+      <End Role="BlTest___Patient" EntitySet="BlTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlTest___Patient_Patients" Association="Self.FK_BlTest___Patient_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="BlTest___Patient" EntitySet="BlTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlTest___Patient_State" Association="Self.FK_BlTest___Patient_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="BlTest___Patient" EntitySet="BlTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comsult___Patient_State" Association="Self.FK_Comsult___Patient_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="Consult___Patient" EntitySet="Consult___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consult___Patient_Patients" Association="Self.FK_Consult___Patient_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Consult___Patient" EntitySet="Consult___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_ConsultationType" Association="Self.FK_Consultation_ConsultationType">
+      <End Role="ConsultationType" EntitySet="ConsultationType" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Destruction" Association="Self.FK_Patients_Destruction">
+      <End Role="Destruction" EntitySet="Destruction" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Diagnosis" Association="Self.FK_Patients_Diagnosis">
+      <End Role="Diagnosis" EntitySet="Diagnosis" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Gender" Association="Self.FK_Patients_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HepTest___Patient_HepaticTest" Association="Self.FK_HepTest___Patient_HepaticTest">
+      <End Role="HepaticTest" EntitySet="HepaticTest" />
+      <End Role="HepTest___Patient" EntitySet="HepTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HepTest___Patient_Patients" Association="Self.FK_HepTest___Patient_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="HepTest___Patient" EntitySet="HepTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HepTest___Patient_State" Association="Self.FK_HepTest___Patient_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="HepTest___Patient" EntitySet="HepTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Type" Association="Self.FK_Patients_Type">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SputumTest___Patient_Patients" Association="Self.FK_SputumTest___Patient_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="SputumTest___Patient" EntitySet="SputumTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UrTest__Patient_Patients" Association="Self.FK_UrTest__Patient_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="UrTest__Patient" EntitySet="UrTest__Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SputumTest___Patient_SputumTest" Association="Self.FK_SputumTest___Patient_SputumTest">
+      <End Role="SputumTest" EntitySet="SputumTest" />
+      <End Role="SputumTest___Patient" EntitySet="SputumTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SputumTest___Patient_State" Association="Self.FK_SputumTest___Patient_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="SputumTest___Patient" EntitySet="SputumTest___Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UrTest__Patient_State" Association="Self.FK_UrTest__Patient_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="UrTest__Patient" EntitySet="UrTest__Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UrTest__Patient_UrineTest" Association="Self.FK_UrTest__Patient_UrineTest">
+      <End Role="UrineTest" EntitySet="UrineTest" />
+      <End Role="UrTest__Patient" EntitySet="UrTest__Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consult___Patient_Consultation" Association="TubDataBaseModel.FK_Consult___Patient_Consultation">
+      <End Role="Consultation" EntitySet="Consultation" />
+      <End Role="Consult___Patient" EntitySet="Consult___Patient" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Consult___Patient_Consultation">
+    <End Type="TubDataBaseModel.Consultation" Role="Consultation" Multiplicity="1" />
+    <End Type="TubDataBaseModel.Consult___Patient" Role="Consult___Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consultation">
+        <PropertyRef Name="cons_id" />
+      </Principal>
+      <Dependent Role="Consult___Patient">
+        <PropertyRef Name="cp_consid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

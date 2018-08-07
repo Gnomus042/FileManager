@@ -1,0 +1,24 @@
+﻿
+@model IEnumerable<DataLibrary.BlTest___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.bltp_date)</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.bltp_date)</td>
+                <td>
+                   @Html.ActionLink("Було зроблено", "ChangeActiveTest", "Test", new { id = item.BloodTest.bltest_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+                <td>
+                    @Html.ActionLink("Видалити", "DeleteTest", new { id = item.bltp_id }, htmlAttributes: new { @class = "btn btn-style" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,34 @@
+﻿
+@model IEnumerable<DataLibrary.BlTest___Patient>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.bltp_date)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_er)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_gran)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_hem)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_leu)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_limf)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_mono)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodTest.bltest_soy)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.bltp_date)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_er)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_gran)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_hem)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_leu)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_limf)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_mono)</td>
+            <td>@Html.DisplayFor(model => item.BloodTest.bltest_soy)</td>
+            <td>
+                @Html.ActionLink("Видалити", "DeleteTest", new { id = item.bltp_id }, htmlAttributes: new { @class = "btn btn-style" })
+            </td>
+        </tr>
+        }
+    </table>
+</div>

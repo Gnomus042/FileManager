@@ -1,0 +1,33 @@
+﻿@model TubNet2.Models.FilterModel
+
+@using (Html.BeginForm("Filter", "Test", FormMethod.Post, htmlAttributes: new { @class = " form-horizontal col-md-12" }))
+{
+    <h4>Стан:</h4>
+    <div class="filter-selector radio">
+        <div>
+            @Html.RadioButtonFor(model => model.ViewType, "Plan") заплановано
+        </div>
+        <div>
+            @Html.RadioButtonFor(model => model.ViewType, "Close") завершено
+        </div>
+        <div>
+            @Html.RadioButtonFor(model => model.ViewType, "Lose") пропущено
+        </div>
+    </div>
+    <h4>@Html.CheckBoxFor(model => model.UseDate) Дата:</h4>
+    <div class="filter-date form-group col-md-12">
+        @if (Model.borderDate == null)
+    {
+        @Html.EditorFor(model => model.borderDate, new { htmlAttributes = new { @Value = @DateTime.Today.ToString("yyyy-MM-dd"), @class = "form-control" } })
+}
+else
+{
+    @Html.EditorFor(model => model.borderDate, new { htmlAttributes = new { @class = "form-control" } })
+
+}
+    </div>
+    <br />
+    <div class="form-group submit-but">
+        <input type="submit" value="Шукати" class="btn btn-style" />
+    </div>
+}   

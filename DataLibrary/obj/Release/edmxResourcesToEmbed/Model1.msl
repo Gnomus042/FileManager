@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TubDataBaseModelContainer" CdmEntityContainer="TubDataBaseEntities">
+    <EntitySetMapping Name="BK">
+      <EntityTypeMapping TypeName="TubDataBaseModel.BK">
+        <MappingFragment StoreEntitySet="BK">
+          <ScalarProperty Name="bk_id" ColumnName="bk_id" />
+          <ScalarProperty Name="bk_value" ColumnName="bk_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BloodTest">
+      <EntityTypeMapping TypeName="TubDataBaseModel.BloodTest">
+        <MappingFragment StoreEntitySet="BloodTest">
+          <ScalarProperty Name="bltest_id" ColumnName="bltest_id" />
+          <ScalarProperty Name="bltest_leu" ColumnName="bltest_leu" />
+          <ScalarProperty Name="bltest_hem" ColumnName="bltest_hem" />
+          <ScalarProperty Name="bltest_er" ColumnName="bltest_er" />
+          <ScalarProperty Name="bltest_gran" ColumnName="bltest_gran" />
+          <ScalarProperty Name="bltest_limf" ColumnName="bltest_limf" />
+          <ScalarProperty Name="bltest_mono" ColumnName="bltest_mono" />
+          <ScalarProperty Name="bltest_soy" ColumnName="bltest_soy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlTest___Patient">
+      <EntityTypeMapping TypeName="TubDataBaseModel.BlTest___Patient">
+        <MappingFragment StoreEntitySet="BlTest - Patient">
+          <ScalarProperty Name="bltp_id" ColumnName="bltp_id" />
+          <ScalarProperty Name="bltp_patid" ColumnName="bltp_patid" />
+          <ScalarProperty Name="bltp_testid" ColumnName="bltp_testid" />
+          <ScalarProperty Name="bltp_date" ColumnName="bltp_date" />
+          <ScalarProperty Name="bltp_state" ColumnName="bltp_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consult___Patient">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Consult___Patient">
+        <MappingFragment StoreEntitySet="Consult - Patient">
+          <ScalarProperty Name="cp_id" ColumnName="cp_id" />
+          <ScalarProperty Name="cp_patid" ColumnName="cp_patid" />
+          <ScalarProperty Name="cp_consid" ColumnName="cp_consid" />
+          <ScalarProperty Name="cp_date" ColumnName="cp_date" />
+          <ScalarProperty Name="cp_state" ColumnName="cp_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultation">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Consultation">
+        <MappingFragment StoreEntitySet="Consultation">
+          <ScalarProperty Name="cons_id" ColumnName="cons_id" />
+          <ScalarProperty Name="cons_type" ColumnName="cons_type" />
+          <ScalarProperty Name="cons_komment" ColumnName="cons_komment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultationType">
+      <EntityTypeMapping TypeName="TubDataBaseModel.ConsultationType">
+        <MappingFragment StoreEntitySet="ConsultationType">
+          <ScalarProperty Name="ct_id" ColumnName="ct_id" />
+          <ScalarProperty Name="ct_value" ColumnName="ct_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Destruction">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Destruction">
+        <MappingFragment StoreEntitySet="Destruction">
+          <ScalarProperty Name="destr_id" ColumnName="destr_id" />
+          <ScalarProperty Name="destr_value" ColumnName="destr_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diagnosis">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Diagnosis">
+        <MappingFragment StoreEntitySet="Diagnosis">
+          <ScalarProperty Name="diag_id" ColumnName="diag_id" />
+          <ScalarProperty Name="diag_value" ColumnName="diag_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="gen_id" ColumnName="gen_id" />
+          <ScalarProperty Name="gen_value" ColumnName="gen_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HepaticTest">
+      <EntityTypeMapping TypeName="TubDataBaseModel.HepaticTest">
+        <MappingFragment StoreEntitySet="HepaticTest">
+          <ScalarProperty Name="heptest_id" ColumnName="heptest_id" />
+          <ScalarProperty Name="heptest_bilir" ColumnName="heptest_bilir" />
+          <ScalarProperty Name="heptest_timil" ColumnName="heptest_timil" />
+          <ScalarProperty Name="heptest_alt" ColumnName="heptest_alt" />
+          <ScalarProperty Name="heptest_ast" ColumnName="heptest_ast" />
+          <ScalarProperty Name="heptest_uricasid" ColumnName="heptest_uricasid" />
+          <ScalarProperty Name="heptest_kreat" ColumnName="heptest_kreat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HepTest___Patient">
+      <EntityTypeMapping TypeName="TubDataBaseModel.HepTest___Patient">
+        <MappingFragment StoreEntitySet="HepTest - Patient">
+          <ScalarProperty Name="htp_id" ColumnName="htp_id" />
+          <ScalarProperty Name="htp_patid" ColumnName="htp_patid" />
+          <ScalarProperty Name="htp_testid" ColumnName="htp_testid" />
+          <ScalarProperty Name="htp_date" ColumnName="htp_date" />
+          <ScalarProperty Name="htp_state" ColumnName="htp_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Logs">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Patients">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_surname" ColumnName="p_surname" />
+          <ScalarProperty Name="p_secname" ColumnName="p_secname" />
+          <ScalarProperty Name="p_birthday" ColumnName="p_birthday" />
+          <ScalarProperty Name="p_genderId" ColumnName="p_genderId" />
+          <ScalarProperty Name="p_factAddress" ColumnName="p_factAddress" />
+          <ScalarProperty Name="p_regAddress" ColumnName="p_regAddress" />
+          <ScalarProperty Name="p_diagnosisId" ColumnName="p_diagnosisId" />
+          <ScalarProperty Name="p_typeId" ColumnName="p_typeId" />
+          <ScalarProperty Name="p_bkID" ColumnName="p_bkID" />
+          <ScalarProperty Name="p_destructionId" ColumnName="p_destructionId" />
+          <ScalarProperty Name="p_otherDiseases" ColumnName="p_otherDiseases" />
+          <ScalarProperty Name="p_firstVisit" ColumnName="p_firstVisit" />
+          <ScalarProperty Name="p_lastVisit" ColumnName="p_lastVisit" />
+          <ScalarProperty Name="p_result" ColumnName="p_result" />
+          <ScalarProperty Name="p_phones" ColumnName="p_phones" />
+          <ScalarProperty Name="p_komment" ColumnName="p_komment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SputumTest">
+      <EntityTypeMapping TypeName="TubDataBaseModel.SputumTest">
+        <MappingFragment StoreEntitySet="SputumTest">
+          <ScalarProperty Name="sputtest_id" ColumnName="sputtest_id" />
+          <ScalarProperty Name="sputtest_scopy" ColumnName="sputtest_scopy" />
+          <ScalarProperty Name="sputtest_inocul" ColumnName="sputtest_inocul" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SputumTest___Patient">
+      <EntityTypeMapping TypeName="TubDataBaseModel.SputumTest___Patient">
+        <MappingFragment StoreEntitySet="SputumTest - Patient">
+          <ScalarProperty Name="sptp_id" ColumnName="sptp_id" />
+          <ScalarProperty Name="sptp_patid" ColumnName="sptp_patid" />
+          <ScalarProperty Name="sptp_testid" ColumnName="sptp_testid" />
+          <ScalarProperty Name="sptp_date" ColumnName="sptp_date" />
+          <ScalarProperty Name="sptp_state" ColumnName="sptp_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="TubDataBaseModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="state_value" ColumnName="state_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TubDataBaseModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="TubDataBaseModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="type_value" ColumnName="type_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrineTest">
+      <EntityTypeMapping TypeName="TubDataBaseModel.UrineTest">
+        <MappingFragment StoreEntitySet="UrineTest">
+          <ScalarProperty Name="urtest_id" ColumnName="urtest_id" />
+          <ScalarProperty Name="urtest_protein" ColumnName="urtest_protein" />
+          <ScalarProperty Name="urtest_sugar" ColumnName="urtest_sugar" />
+          <ScalarProperty Name="urtest_leumin" ColumnName="urtest_leumin" />
+          <ScalarProperty Name="urtest_leumax" ColumnName="urtest_leumax" />
+          <ScalarProperty Name="urtest_ermin" ColumnName="urtest_ermin" />
+          <ScalarProperty Name="urtest_ermax" ColumnName="urtest_ermax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrTest__Patient">
+      <EntityTypeMapping TypeName="TubDataBaseModel.UrTest__Patient">
+        <MappingFragment StoreEntitySet="UrTest- Patient">
+          <ScalarProperty Name="utp_id" ColumnName="utp_id" />
+          <ScalarProperty Name="utp_patid" ColumnName="utp_patid" />
+          <ScalarProperty Name="utp_testid" ColumnName="utp_testid" />
+          <ScalarProperty Name="utp_date" ColumnName="utp_date" />
+          <ScalarProperty Name="utp_state" ColumnName="utp_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
